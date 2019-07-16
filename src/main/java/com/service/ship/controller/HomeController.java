@@ -1,21 +1,21 @@
 package com.service.ship.controller;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
-public class HomeController {
+import com.service.ship.constants.ParamConstants;
+import com.service.ship.constants.RequestPath;
+import com.service.ship.constants.ViewPage;
 
-	@Value("${title.message}")
-	private String title;
+@Controller(RequestPath.HOME)
+public class HomeController extends BaseController {
 
-	@GetMapping("/")
+	@GetMapping
 	public String homePage(Model model) {
 
-		model.addAttribute("title", title);
+		model.addAttribute(ParamConstants.PARAM_TITLE, title);
 
-		return "home"; // view
+		return ViewPage.HOME;
 	}
 }
