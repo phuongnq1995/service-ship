@@ -18,4 +18,16 @@ public class HomeController extends BaseController {
 
 		return ViewPage.HOME;
 	}
+
+	/**
+	 * load page index
+	 * @param model
+	 * @return String
+	 * @author DungNQ
+	 */
+	@GetMapping("/index")
+	public String indexPage(Model model) {
+		model.addAttribute("title", title);
+		return "index"; 
+	}
 }

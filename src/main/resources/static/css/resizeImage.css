@@ -1,0 +1,40 @@
+.image-box {
+	position: relative;
+	overflow: hidden;
+}
+.image-box::before {
+	content: "";
+	display: block;
+}
+.image-box .image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	background-size: cover;
+	background-position: center;
+}
+.image-box.ratio-1-1::before {
+	padding-top: 100%;
+}
+.image-box.ratio-2-1::before {
+	padding-top: 50%;
+}
+.image-box.ratio-1-2::before {
+	padding-top: 200%;
+}
+.image-box.ratio-4-3:before {
+	padding-top: 75%;
+}
+.image-box.ratio-5-3:before {
+	padding-top: 60%;
+}
+.image-box.ratio-16-9:before {
+	padding-top: 56.25%;
+}
+.img-responsive1{
+
+    max-height: 235px;
+}
