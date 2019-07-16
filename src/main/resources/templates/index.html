@@ -10,15 +10,15 @@
 		<link rel="icon" href="favicon.ico">
 		<title>A.ĐĂNG-HAIRSALON</title>
 		<!-- Bootstrap core CSS -->
-		<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<!-- Custom styles for this template -->
-		<link rel="stylesheet" th:href="@{css/owl.carousel.css}">
-		<link rel="stylesheet" th:href="@{css/owl.theme.default.min.css}">
-		<link rel="stylesheet" th:href="@{css/animate.css}">
-		<link rel="stylesheet" th:href="@{css/style.css}">
-		<link rel="stylesheet" th:href="@{css/resizeImage.css}">
-		<link rel="stylesheet" th:href="@{css/custom.css}">
+		<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+		<link rel="stylesheet" th:href="@{/css/owl.theme.default.min.css}">
+		<link rel="stylesheet" th:href="@{/css/animate.css}">
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<link rel="stylesheet" th:href="@{/css/resizeImage.css}">
+		<link rel="stylesheet" th:href="@{/css/custom.css}">
 	</head>
 	<body id="page-top">
 		<!-- Navigation -->
@@ -32,7 +32,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand page-scroll" style="height: 60px;" href="#page-top"><img src="images/logoADang.jpg" style="    height: 60px;" alt="Salog A Đăng"></a>
+					<a class="navbar-brand page-scroll" style="height: 60px;" href="#page-top"><img src="images/logoADang.jpg" style="height: 60px;" alt="Salog A Đăng"></a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,7 +41,7 @@
 							<a href="#page-top"></a>
 						</li>
 						<li>
-							<a class="page-scroll" href="#page-top">Home</a>
+							<a class="page-scroll" href="#page-top"><span th:text="#{label.home}"></span></a>
 						</li>
 						<li>
 							<a class="page-scroll" href="#about">About</a>
@@ -62,8 +62,8 @@
 							<a class="page-scroll" href="#contact">Contact</a>
 						</li>
 						<li>
-							 <img src="images/flag-en.png" alt="En" class="img-language-en" />
-							 <img src="images/flag-vn.png" alt="En" class="flag-vn.png" />
+							<a href="?locale=en"><img src="images/flag-en.png" alt="En" class="img-language-en" /></a>
+							<a href="?locale=vn"><img src="images/flag-vn.png" alt="VN" class="flag-vn.png" /></a>
 						</li>
 					</ul>
 				</div>
@@ -688,13 +688,13 @@
 		<!-- Bootstrap core JavaScript
 			================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/cbpAnimatedHeader.js"></script>
-		<script src="js/jquery.appear.js"></script>
-		<script src="js/SmoothScroll.min.js"></script>
-		<script src="js/theme-scripts.js"></script>
+		<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/jquery-easing.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/owl.carousel.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/cbpAnimatedHeader.js}"></script>
+		<script type="text/javascript" th:src="@{/js/jquery.appear.js}"></script>
+		<script type="text/javascript" th:src="@{/js/SmoothScroll.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/theme-scripts.js}"></script>
 	</body>
 </html>

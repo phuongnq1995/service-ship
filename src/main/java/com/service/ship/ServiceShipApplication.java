@@ -9,5 +9,4 @@ public class ServiceShipApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ServiceShipApplication.class, args);
 	}
-
 }

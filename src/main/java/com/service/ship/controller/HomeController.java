@@ -8,10 +8,10 @@ import com.service.ship.constants.ParamConstants;
 import com.service.ship.constants.RequestPath;
 import com.service.ship.constants.ViewPage;
 
-@Controller(RequestPath.HOME)
+@Controller
 public class HomeController extends BaseController {
 
-	@GetMapping
+	@GetMapping(RequestPath.HOME)
 	public String homePage(Model model) {
 
 		model.addAttribute(ParamConstants.PARAM_TITLE, title);
