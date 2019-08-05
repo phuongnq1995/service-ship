@@ -1,6 +1,12 @@
 package com.service.ship.entity;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import com.service.ship.entity.base.BaseModel;
@@ -16,7 +22,12 @@ public class User extends BaseModel {
 	private String password;
 
 	private boolean enabled;
-	
+
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), 
+		inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private Set<Role> roles;
+
 	public String getUsername() {
 		return username;
 	}

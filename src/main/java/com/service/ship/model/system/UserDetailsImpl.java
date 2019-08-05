@@ -1,4 +1,4 @@
-package com.service.ship.model.user;
+package com.service.ship.model.system;
 
 import java.util.Collection;
 

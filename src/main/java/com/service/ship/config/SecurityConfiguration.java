@@ -1,8 +1,6 @@
 package com.service.ship.config;
 
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -17,8 +15,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	@Bean
+	public BCryptPasswordEncoder getPasswordEncoder() {
+		return new BCryptPasswordEncoder(11);
+	}
 
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
@@ -27,7 +27,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 		authProvider.setUserDetailsService(userDetailsService());
 
-		authProvider.setPasswordEncoder(bCryptPasswordEncoder);
+		authProvider.setPasswordEncoder(getPasswordEncoder());
 
 		return authProvider;
 	}
@@ -50,6 +50,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 		httpSecurity
 			.authorizeRequests()
+			.requestMatchers(PathRequest.toStaticResources().atCommonLocations())
+			.permitAll()
 			.antMatchers("/", "/index")
 			.permitAll()
 			.antMatchers("/user*").hasAnyRole("ROLEE_USER")

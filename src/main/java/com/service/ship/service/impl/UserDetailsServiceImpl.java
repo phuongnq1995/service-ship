@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.service.ship.entity.User;
-import com.service.ship.model.user.UserDetailsImpl;
+import com.service.ship.model.system.UserDetailsImpl;
 import com.service.ship.repository.RoleRepository;
 import com.service.ship.repository.UserRepository;
 
@@ -35,7 +35,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 		Collection<GrantedAuthority> authorities = 
 			AuthorityUtils.createAuthorityList(
-				roleRepository.findRoleNameByUserId(user.getId())
+				roleRepository.findNameByUserId(user.getId())
 					.toArray(new String[0]));
 	
 		return new UserDetailsImpl(user, authorities);

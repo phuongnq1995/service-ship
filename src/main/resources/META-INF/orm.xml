@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_1.xsd"
+	version="2.1">
+
+	<named-native-query name="Role.findNameByUserId">
+		<query>
+			SELECT r.name as name
+
+			FROM user u
+
+			INNER JOIN user_role ur ON ur.user_id = u.id
+
+			INNER JOIN role r ON r.id = ur.role_id
+
+			WHERE u.id = :userId
+
+			ORDER BY r.id
+		</query>
+	</named-native-query>
+
+</entity-mappings>
